@@ -8,7 +8,7 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
-
+sudo dnf copr enable tcg/themes
 sudo dnf install \
 -y \
 brave-browser \
@@ -32,17 +32,12 @@ alsa-lib  \
 mesa-libEGL \
 libXdamage \
 mesa-libGL \
-libXScrnSaver
+libXScrnSaver \
+la-capitaine-icon-theme
 
-sudo systemctl enable --now tuned
-chsh -s $(which zsh)
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sh -c "$(curl -fsSL https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh)"
-curl https://raw.githubusercontent.com/jcarlosgalvezm/fedora_post_install/master/.zshrc --output ~/.zshrc
-
-# Finally manually Install extensions
+# Finally manually install this extensions:
+# user-theme
+# dash-to-dock
 # frippery move clock
 # coverflow alt-tab
 # activities configurator
-
