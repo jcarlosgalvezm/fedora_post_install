@@ -35,6 +35,9 @@ mesa-libGL \
 libXScrnSaver \
 la-capitaine-icon-theme
 
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Finally manually install this extensions:
 # user-theme
 # dash-to-dock

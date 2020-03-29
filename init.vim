@@ -12,3 +12,7 @@ set shiftwidth=4
 
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 1
+
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],}
+
+let g:ale_fix_on_save = 1
