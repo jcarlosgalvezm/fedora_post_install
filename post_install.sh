@@ -33,7 +33,11 @@ mesa-libEGL \
 libXdamage \
 mesa-libGL \
 libXScrnSaver \
-la-capitaine-icon-theme
+la-capitaine-icon-theme \
+texlive-scheme-basic \
+texlive-scheme-medium \
+texlive-scheme-full
+
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
