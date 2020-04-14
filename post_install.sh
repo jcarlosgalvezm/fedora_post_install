@@ -37,7 +37,8 @@ la-capitaine-icon-theme \
 texlive-scheme-basic \
 texlive-scheme-medium \
 texlive-scheme-full \
-kvantum
+kvantum \
+latte-dock
 
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
