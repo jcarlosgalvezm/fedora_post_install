@@ -13,9 +13,6 @@ sudo dnf install \
 -y \
 brave-browser \
 bleachbit \
-gnome-tweak-tool \
-gnome-shell-extension-dash-to-dock \
-gnome-shell-extension-user-theme \
 vim \
 zsh \
 zsh-syntax-highlighting \
@@ -44,9 +41,5 @@ latte-dock
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Finally manually install this extensions:
-# user-theme
-# dash-to-dock
-# frippery move clock
-# coverflow alt-tab
-# activities configurator
+# NodeJS
+curl -sL install-node.now.sh | sudo sh
