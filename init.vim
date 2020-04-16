@@ -36,5 +36,3 @@ colorscheme sublimemonokai
 set termguicolors
 set t_Co=256
 let g:sublimemonokai_term_italic = 1
-
-

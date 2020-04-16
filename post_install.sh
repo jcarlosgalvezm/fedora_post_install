@@ -43,3 +43,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # NodeJS
 curl -sL install-node.now.sh | sudo sh
+
+# SpaceVim
+curl -sLf https://spacevim.org/install.sh | bash
+
+wget http://download.eclipse.org/jdtls/milestones/0.53.0/jdt-language-server-0.53.0-202003311717.tar.gz
+mkdir $HOME/jdt-language
+tar -xvzf jdt-language-server-0.53.0-202003311717.tar.gz -C $HOME/jdt-language
