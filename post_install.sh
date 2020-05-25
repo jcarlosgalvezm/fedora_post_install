@@ -35,7 +35,8 @@ texlive-scheme-basic \
 texlive-scheme-medium \
 texlive-scheme-full \
 kvantum \
-latte-dock
+latte-dock \
+freeglut-devel
 
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
