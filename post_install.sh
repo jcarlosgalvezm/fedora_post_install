@@ -12,7 +12,6 @@ sudo dnf copr enable tcg/themes
 sudo dnf install \
 -y \
 brave-browser \
-bleachbit \
 vim \
 zsh \
 zsh-syntax-highlighting \
@@ -30,7 +29,6 @@ mesa-libEGL \
 libXdamage \
 mesa-libGL \
 libXScrnSaver \
-la-capitaine-icon-theme \
 texlive-scheme-basic \
 texlive-scheme-medium \
 texlive-scheme-full \
