@@ -38,7 +38,8 @@ freeglut-devel \
 libxml2-devel.x86_64 \
 R-devel.x86_64 \
 openssl-devel \
-libcurl-devel
+libcurl-devel \
+rstudio-desktop
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
