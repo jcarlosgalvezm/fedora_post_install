@@ -16,6 +16,9 @@ call plug#begin(g:plugged_home)
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 
+  "" NERD-Tree
+  Plug 'scrooloose/nerdtree'
+
   call plug#end()
 filetype plugin indent on
 
@@ -98,3 +101,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  " always display the status line
+
+augroup nerdtree_open
+    autocmd!
+    autocmd VimEnter * NERDTree | wincmd p
+augroup END
