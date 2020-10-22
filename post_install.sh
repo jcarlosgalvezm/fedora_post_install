@@ -3,53 +3,46 @@ sudo dnf -y install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmf
 
 sudo dnf -y clean all && sudo dnf -y update && sudo dnf -y upgrade
 
-# Brave
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-
-sudo dnf copr enable tcg/themes
 sudo dnf install \
 -y \
-brave-browser \
-vim \
+git \
+yakuake \
+vlc \
 zsh \
 zsh-syntax-highlighting \
-util-linux-user \
-powerline-fonts \
+#util-linux-user \
+#powerline-fonts \
 neovim \
 python3-neovim \
-libXcomposite \
-libXcursor \
-libXi \
-libXtst \
-libXrandr \
-alsa-lib  \
-mesa-libEGL \
-libXdamage \
-mesa-libGL \
-libXScrnSaver \
-texlive-scheme-basic \
-texlive-scheme-medium \
-texlive-scheme-full \
-kvantum \
+#libXcomposite \
+#libXcursor \
+#libXi \
+#libXtst \
+#libXrandr \
+#alsa-lib  \
+#mesa-libEGL \
+#libXdamage \
+#mesa-libGL \
+#libXScrnSaver \
+#texlive-scheme-basic \
+#texlive-scheme-medium \
+#texlive-scheme-full \
+#kvantum \
 latte-dock \
-freeglut-devel \
-libxml2-devel.x86_64 \
-R-devel.x86_64 \
-openssl-devel \
-libcurl-devel \
-rstudio-desktop
+#freeglut-devel \
+#libxml2-devel.x86_64 \
+#R-devel.x86_64 \
+#openssl-devel \
+#libcurl-devel \
+
+pip install --user neovim
+pip install --user flake8
+pip install --user autopep8
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# NodeJS
-curl -sL install-node.now.sh | sudo sh
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
 
-# SpaceVim
-curl -sLf https://spacevim.org/install.sh | bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-wget http://download.eclipse.org/jdtls/milestones/0.53.0/jdt-language-server-0.53.0-202003311717.tar.gz
-mkdir $HOME/jdt-language
-tar -xvzf jdt-language-server-0.53.0-202003311717.tar.gz -C $HOME/jdt-language

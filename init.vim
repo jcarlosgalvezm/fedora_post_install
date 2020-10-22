@@ -1,38 +1,100 @@
-call plug#begin()
-Plug 'w0rp/ale'
-Plug 'Chiel92/vim-autoformat'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ErichDonGubler/vim-sublime-monokai'
-Plug 'rudes/vim-java'
-Plug 'pangloss/vim-javascript'
-Plug 'crusoexia/vim-javascript-lib'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+let g:plugged_home = '~/.vim/plugged'
+" Plugins List
+call plug#begin(g:plugged_home)
+  " UI related
+  Plug 'chriskempson/base16-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " Better Visual Guide
+  Plug 'Yggdroot/indentLine'
+  " syntax check
+  Plug 'w0rp/ale'
+  " Formater
+  Plug 'Chiel92/vim-autoformat'
+  
+  "" Snippets
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
+  call plug#end()
+filetype plugin indent on
+
+" UI configuration
+syntax on
+syntax enable
+
+" True Color Support if it's avaiable in terminal
+if has("termguicolors")
+    set termguicolors
+endif
+
+if has("gui_running")
+  set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
+endif
+
+set hidden
+set mouse=a
+set noshowmode
+set noshowmatch
+set nolazyredraw
+
+" Turn off backup
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Search configuration
+set ignorecase                    " ignore case when searching
+set smartcase                     " turn on smartcase
+
+" Tab and Indent configuration
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" vim-autoformat
+noremap <F3> :Autoformat<CR>
+
+set hidden
+set mouse=a
+set noshowmode
+set noshowmatch
+set nolazyredraw
+
+" Turn off backup
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Search configuration
+set ignorecase                    " ignore case when searching
+set smartcase                     " turn on smartcase
 
 " Tab and Indent configuration
 set expandtab
 set tabstop=4
 set shiftwidth=4
 
-let g:airline#extensions#ale#enabled = 1
-let g:ale_open_list = 1
+" vim-autoformat
+noremap <F3> :Autoformat<CR>
 
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],}
-let g:ale_fix_on_save = 1
-
-" Write this in your vimrc file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-" You can disable this option too
-" if you don't want linters to run on opening a file
+" Ale
 let g:ale_lint_on_enter = 0
-" Show 5 lines of errors (default: 10)
-let g:ale_list_window_size = 5
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'python': ['flake8']}
 
-" Colors
-syntax on
-colorscheme sublimemonokai
-set termguicolors
-set t_Co=256
-let g:sublimemonokai_term_italic = 1
+" Airline
+let g:airline_left_sep  = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#ale#enabled = 1
+let airline#extensions#ale#error_symbol = 'E:'
+let airline#extensions#ale#warning_symbol = 'W:'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line
