@@ -38,6 +38,7 @@ latte-dock \
 pip install --user neovim
 pip install --user flake8
 pip install --user autopep8
+pip install --user jupyter-lab
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
