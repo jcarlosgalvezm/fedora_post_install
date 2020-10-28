@@ -19,8 +19,14 @@ call plug#begin(g:plugged_home)
   "" NERD-Tree
   Plug 'scrooloose/nerdtree'
 
+  "" Deoplete
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-jedi'
+
   call plug#end()
 filetype plugin indent on
+
+let g:deoplete#enable_at_startup = 1
 
 " UI configuration
 syntax on
